@@ -5,192 +5,250 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Íñigo Martínez Rubio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Íñigo Martínez Rubio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+	<title>3d model</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.37.1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>íñigo Martínez Portfolio<br />
-						</h1>
-						<p>Game Designer, 3D Artist & QA Tester. See references to my work <a href="https://www.artstation.com/cagemein">here.</a> Videogames are my passion, and I enjoy every single </a><br />
-						day I can spend creating and testing them. Hope we can work together in the future.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Work</a>
+	<link href="style.css" rel="stylesheet">
+	<!-- The following libraries and polyfills are recommended to maximize browser support -->
+	<!-- NOTE: you must adjust the paths as appropriate for your project -->
+	<!--  REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+	<!--  OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+	<!--     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script> -->
+	<!--  OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+	<!--     <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script> -->
+	<!--  OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+	<!--
+	<script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+	 -->
+</head>
+<body class="is-preload">
+
+	<!-- 3D content for your site: -->
+
+	<model-viewer src="scene.gltf" alt="A 3D model of a car" shadow-intensity="1" camera-controls auto-rotate ar>
+	</model-viewer>
+
+
+	<!-- 💁 Include both scripts below to support all browsers! -->
+	<!-- Loads <model-viewer> for modern browsers: -->
+	<script type="module"
+			src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+	</script>
+
+	<!-- Loads <model-viewer> for old browsers like IE11: -->
+	<script nomodule
+			src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+	</script>
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro">
+			<h1>
+				íñigo Martínez Portfolio<br />
+			</h1>
+			<p>
+				Game Designer, 3D Artist & QA Tester. See references to my work <a href="https://www.artstation.com/cagemein">here.</a> Videogames are my passion, and I enjoy every single </a><br />
+				day I can spend creating and testing them. Hope we can work together in the future.
+			</p>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+			</ul>
+		</div>
+
+		<!-- Header -->
+		<header id="header">
+			<a href="index.html" class="logo">Work</a>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="generic.html">About Me</a></li>
+
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<h2>
+						<a href="#">
+							TENe37<br />
+							a space adventure.
+						</a>
+					</h2>
+					<p>In TENe37 you play as Atn0ni0. A scientist in the very distant future, where humanity has expanded all over the galaxy. The collapse of the universe feels inevitable. Until our main character finds a way to send messages to the past. Giving humanity, a chance to change things.</p>
+				</header>
+				<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+				<ul class="actions special">
+					<li><a href="https://www.artstation.com/artwork/q9mrwa" class="button large">Renders</a></li>
+				</ul>
+			</article>
+
+			<!-- Posts -->
+			<section class="posts">
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Hanako<br />
+							</a>
+						</h2>
 					</header>
+					<a href="#" class="image fit"><img src="images/HanakoGIF_Cropped.gif" alt=""></a>
+					<p>Hanako is my first attempt at a real time movie made in Unreal Engine 4. It tells a story of life and death in ancient Japan where a village is stucked in a timeloop that our characters will need to solve.</p>
+					<ul class="actions special">
+						<li><a href="https://www.youtube.com/watch?v=cXm7FUe9I98&t=298s" class="button">Watch Hanako</a></li>
+					</ul>
+				</article>
+				<article>
+					<header>
+						<h2>
+							<a href="#">Space X Starship<br />
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+					<p>This is a model of the SpaceX Starship program I did back in 2021. As a fan of space exploration, I learned a lot during this time. Something that I try to do with every single project I'm into.</p>
+					<ul class="actions special">
+						<li><a href="https://www.artstation.com/cagemein/albums/2883945" class="button">See the renders</a></li>
+					</ul>
+				</article>
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								RMS Titanic<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+					<p>Titanic was and still is one of the things that have captivated me most. The story of the people that were on, the ship, the iceberg... Everything about it made me challenge myself to create a one-to-one 3D model of the ship.</p>
+					<ul class="actions special">
+						<li><a href="https://www.artstation.com/artwork/o2LnoJ" class="button">See the Renders</a></li>
+					</ul>
+				</article>
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Solitude<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+					<p>In Solitude you play as an astronaut, who founds a strange signal from very far away. Following the signal, he embraces a misterious journey in outer space that will change his life.</p>
+					<ul class="actions special">
+						<li><a href="https://globalgamejam.org/2021/games/solitude-9" class="button">Play The Game</a></li>
+					</ul>
+				</article>
+				<article>
+					<header>
+						<h2>
+							<a href="#">
+								Project [Redacted]<br />
+							</a>
+						</h2>
+					</header>
+					<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+					<p>This game wass made for the 2022 Global Game Jam. It's a 2D game that brings you the basic feel of a children's story book with the folklore as the main protagonist. Make use of your reflexes and skill to master dodging obstacles and quick time events. We hope you enjoy this journey and find the duality hidden within</p>
+					<ul class="actions special">
+						<li><a href="https://globalgamejam.org/2022/games/project-untitled-5" class="button">Play the game</a></li>
+					</ul>
+			</section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="generic.html">About Me</a></li>
+			<!-- Footer -->
+			<footer>
+				<div class="pagination">
+					<!--<a href="#" class="previous">Prev</a>-->
+					<a href="#" class="page active">1</a>
+					<a href="#" class="next">Next</a>
+				</div>
+			</footer>
 
+		</div>
 
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="#">TENe37<br />
-									a space adventure.</a></h2>
-									<p>In TENe37 you play as Atn0ni0. A scientist in the very distant future, where humanity has expanded all over the galaxy. The collapse of the universe feels inevitable. Until our main character finds a way to send messages to the past. Giving humanity, a chance to change things.</p>
-								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://www.artstation.com/artwork/q9mrwa" class="button large">Renders</a></li>
-								</ul>
-							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<h2><a href="#">Hanako<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/HanakoGIF_Cropped.gif" alt=""></a>
-									<p>Hanako is my first attempt at a real time movie made in Unreal Engine 4. It tells a story of life and death in ancient Japan where a village is stucked in a timeloop that our characters will need to solve.</p>
-									<ul class="actions special">
-										<li><a href="https://www.youtube.com/watch?v=cXm7FUe9I98&t=298s" class="button">Watch Hanako</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">Space X Starship<br />
-										</h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-									<p>This is a model of the SpaceX Starship program I did back in 2021. As a fan of space exploration, I learned a lot during this time. Something that I try to do with every single project I'm into.</p>
-									<ul class="actions special">
-										<li><a href="https://www.artstation.com/cagemein/albums/2883945" class="button">See the renders</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">RMS Titanic<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									<p>Titanic was and still is one of the things that have captivated me most. The story of the people that were on, the ship, the iceberg... Everything about it made me challenge myself to create a one-to-one 3D model of the ship.</p>
-									<ul class="actions special">
-										<li><a href="https://www.artstation.com/artwork/o2LnoJ" class="button">See the Renders</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">Solitude<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-									<p>In Solitude you play as an astronaut, who founds a strange signal from very far away. Following the signal, he embraces a misterious journey in outer space that will change his life.</p>
-									<ul class="actions special">
-										<li><a href="https://globalgamejam.org/2021/games/solitude-9" class="button">Play The Game</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">Project [Redacted]<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-									<p>This game wass made for the 2022 Global Game Jam. It's a 2D game that brings you the basic feel of a children's story book with the folklore as the main protagonist. Make use of your reflexes and skill to master dodging obstacles and quick time events. We hope you enjoy this journey and find the duality hidden within</p>
-									<ul class="actions special">
-										<li><a href="https://globalgamejam.org/2022/games/project-untitled-5" class="button">Play the game</a></li>
-									</ul>
-							</section>
-
-						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<a href="#" class="page active">1</a>
-									<a href="#" class="next">Next</a>
-								</div>
-							</footer>
-
+		<!-- Footer -->
+		<footer id="footer">
+			<section>
+				<form method="post" action="#">
+					<div class="fields">
+						<div class="field">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="3"></textarea>
+						</div>
 					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send Message" /></li>
+					</ul>
+				</form>
+			</section>
+			<section class="split contact">
+				<section class="alt">
+					<h3>LinkedIn</h3>
+					<a href="https://www.linkedin.com/in/inigomr/" class="button">LinkedIn</a>
+					<p></p>
+				</section>
+				<section>
+					<h3>Phone</h3>
+					<p><a href="#">(+34) 684019151</a></p>
+				</section>
+				<section>
+					<h3>Email</h3>
+					<p><a href="#">inigomartinezrubio@gmail.com</a></p>
+				</section>
+				<section>
+					<h3>Social</h3>
+					<ul class="icons alt">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</section>
+			</section>
+		</footer>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>LinkedIn</h3>
-								<a href="https://www.linkedin.com/in/inigomr/" class="button">LinkedIn</a>
-								<p></p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+34) 684019151</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">inigomartinezrubio@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul><li>&copy; Íñigo Martínez Rubio</li><li>Portfolio</a></li></ul>
+		</div>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Íñigo Martínez Rubio</li><li>Portfolio</a></li></ul>
-					</div>
+	</div>
 
-			</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
