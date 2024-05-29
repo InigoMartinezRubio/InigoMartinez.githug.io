@@ -7,7 +7,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
         body {
-
             --opacity: 0;
             background-image: url('Noctis.jpg'), url('Hanako.jpg'), url('titanic.jpg');
             background-repeat: no-repeat, no-repeat, no-repeat;
@@ -16,10 +15,8 @@
             background-size: cover, cover, cover;
             color: #fff;
             font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: background-image 0.5s;
+            margin: 0;
+            height: 100vh;
         }
 
             body::before {
@@ -38,16 +35,34 @@
                 opacity: var(--opacity);
             }
 
-        .navbar {
+            .navbar {
             display: flex;
             justify-content: space-between;
-            padding: 20px;
-            font-weight: bold;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            z-index: 1000;
         }
 
+        .navbar img {
+            height: 90px;
+            padding: 0px 20px;
+        }
+
+        .navbar-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
         .navbar-item {
-            margin-right: 20px;
-            position: relative;
+            margin: 0 5px;
+        }
+        .navbar-item2 {
+            margin: 0 50px;
         }
 
             .navbar-item:hover .submenu {
@@ -105,11 +120,75 @@
             cursor: pointer;
             border-radius: 6px;
         }
+        .button:hover {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            padding: 20px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            font-weight: bold;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+        }
 
+        .modal-content {
+            background-color: #00000000;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .close {
+            color: #ffffff;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover{
+            color: #ff0000;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .pdf-frame {
+            width: 900px; /* Ancho deseado */
+            height: 900px; /* Alto deseado */
+            background-color: black; /* Fondo negro */
+        }   
         .button-transparent {
             font-family: 'Roboto', sans-serif;
             background-color: transparent;
-            color: #A0A0A0;
+            color: #ffffff;
             border: 1px solid #fff;
             padding: 15px 32px;
             text-align: center;
@@ -121,10 +200,10 @@
             border-radius: 6px;
         }
 
-            .button-transparent:hover {
-                background-color: #fff;
-                color: #000;
-            }
+        .button-transparent:hover {
+            background-color: #ff0000;
+            color: #ffffff;
+        }
 
         .button-container {
             display: flex;
@@ -227,45 +306,46 @@
 <body>
     <div class="navbar">
         <img src="logomad.png" alt="Logo">
-        <div>
+        <div class="navbar-center">
             <span class="navbar-item">
-                About me
-                <div class="submenu">
-                    <button class="button-transparent">What do I do?</button>
-                    <button class="button-transparent">Who Am I?</button>
-                    <button class="button-transparent">Languages</button>
-                    <button class="button-transparent">Ejemplo 4</button>
-                </div>
+                <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
+                    <button class="button-transparent">About Me</button>
+                </a>
             </span>
             <span class="navbar-item">
-                CV
-                <div class="submenu">
-                    <button class="button-transparent">Ejemplo 1</button>
-                    <button class="button-transparent">Ejemplo 2</button>
-                    <button class="button-transparent">Ejemplo 3</button>
-                    <button class="button-transparent">Ejemplo 4</button>
-                </div>
+                <button class="button-transparent" id="cv-button">CV</button>
             </span>
             <span class="navbar-item">
-                Github
-                <div class="submenu">
-                    <button class="button-transparent">Ejemplo 1</button>
-                    <button class="button-transparent">Ejemplo 2</button>
-                    <button class="button-transparent">Ejemplo 3</button>
-                    <button class="button-transparent">Ejemplo 4</button>
-                </div>
+                <a href="https://github.com/InigoMartinezRubio" target="_blank">
+                    <button class="button-transparent">GitHub</button>
+                </a>
             </span>
             <span class="navbar-item">
-                Contact me
-                <div class="submenu">
-                    <button class="button-transparent">Ejemplo 1</button>
-                    <button class="button-transparent">Ejemplo 2</button>
-                    <button class="button-transparent">Ejemplo 3</button>
-                    <button class="button-transparent">Ejemplo 4</button>
-                </div>
+                <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
+                    <button class="button-transparent">Contact</button>
+                </a>
             </span>
         </div>
-        <div>+34 684019151</div>
+        <div class="navbar-item2">
+            +34 684019151
+        </div>
+    </div>
+    <div id="cv-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe class="pdf-frame" src="CV_InigoMartinezRubio.pdf"></iframe>
+        </div>
+    </div>
+    
+    <script>
+        // Función para abrir el modal del CV
+        function openCVModal() {
+            document.getElementById('cv-modal').style.display = "flex";
+        }
+    
+        // Asociar la función al evento click del botón CV
+        document.getElementById('cv-button').addEventListener('click', openCVModal);
+    </script>
     </div>
     <div class="content-container" id="container1">
         <div class="main-content">
@@ -295,20 +375,10 @@
             </div>
         </div>
     </div>
-
-
-<script>
-  document.getElementById('watchButton').addEventListener('click', function() {
-    document.getElementById('videoContainer').style.display = 'block';
-    document.getElementById('container2').style.opacity = 1;
-    document.getElementById('videoPlayer').play();
-  });
-</script>
-
     <div class="content-container" id="container3">
         <div class="main-content">
             <h1>R.M.S. Titanic</h1>
-            <p>This is a hight detailed model I made for my final project, it.</p>
+            <p>This is a hight detailed model I made for my final project, it</p>
             <p>was made using Autodesk Maya and Unreal Engine 5.</p>
             <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
                 <button class="button">Check out the project</button>
@@ -326,13 +396,34 @@
             </a>
         </div>
     </div>
-    <script>
-        document.getElementById('see-my-work-button').addEventListener('click', function() {
-        document.getElementById('container4').scrollIntoView({ behavior: 'smooth' });
-    });
-    </script>
 
-    <script>
+<script>
+    // Remove this block of code
+    // Get modal element
+    var modal = document.getElementById("cv-modal");
+    // Get button that opens the modal
+    var btn = document.getElementById("cv-button");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script>
     document.getElementById('watch-it-button').addEventListener('click', function() {
         document.getElementById('video-container').style.display = 'block';
         document.getElementById('container2').style.opacity = 1;
@@ -341,6 +432,7 @@
         document.getElementById('container3').style.zIndex = 1;
         document.getElementById('youtube-video').src += "&autoplay=1";
     });
+</script>
     </script>
     <script>
         document.getElementById('see-my-work-button').addEventListener('click', function() {
