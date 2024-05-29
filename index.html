@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
         body {
+
             --opacity: 0;
             background-image: url('Noctis.jpg'), url('Hanako.jpg'), url('titanic.jpg');
             background-repeat: no-repeat, no-repeat, no-repeat;
@@ -19,21 +22,21 @@
             transition: background-image 0.5s;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            background: url('Hanako.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: var(--opacity);
-        }
+            body::before {
+                content: "";
+                position: fixed;
+                background: url('Hanako.jpg') no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: var(--opacity);
+            }
 
         .navbar {
             display: flex;
@@ -47,9 +50,9 @@
             position: relative;
         }
 
-        .navbar-item:hover .submenu {
-            display: block;
-        }
+            .navbar-item:hover .submenu {
+                display: block;
+            }
 
         .submenu {
             display: none;
@@ -63,11 +66,11 @@
             top: 100%;
         }
 
-        .submenu button {
-            padding: 10px 20px;
-            font-size: 14px;
-            margin: 1px 0;
-        }
+            .submenu button {
+                padding: 10px 20px;
+                font-size: 14px;
+                margin: 1px 0;
+            }
 
         .content-container {
             position: relative;
@@ -118,10 +121,10 @@
             border-radius: 6px;
         }
 
-        .button-transparent:hover {
-            background-color: #fff;
-            color: #000;
-        }
+            .button-transparent:hover {
+                background-color: #fff;
+                color: #000;
+            }
 
         .button-container {
             display: flex;
@@ -138,6 +141,7 @@
             font-size: 1.3em;
             color: #A0A0A0;
         }
+
         #container3::before {
             content: "";
             position: fixed;
@@ -153,6 +157,7 @@
             z-index: -1;
             opacity: var(--opacity);
         }
+
         #container4::before {
             content: "";
             position: fixed;
@@ -168,6 +173,7 @@
             z-index: -1;
             opacity: var(--opacity);
         }
+
         .main-content {
             position: relative;
             padding-bottom: 10px;
@@ -176,6 +182,7 @@
         .text-content {
             width: 100%;
         }
+
         #container1::before {
             content: "";
             position: absolute;
@@ -184,7 +191,7 @@
             background-position: center bottom;
             width: 100px; /* Ancho de tu imagen */
             height: 100px; /* Alto de tu imagen */
-            animation: moveUpDown 1s infinite alternate; /* AnimaciÛn que se mueve de arriba a abajo */
+            animation: moveUpDown 1s infinite alternate; /* AnimaciÔøΩn que se mueve de arriba a abajo */
             bottom: 300px; /* Distancia desde abajo */
             left: calc(50% - 50px); /* Centrar horizontalmente */
         }
@@ -193,28 +200,28 @@
             0% {
                 transform: translateY(0);
             }
+
             100% {
                 transform: translateY(20px);
             }
         }
+
         .video-container {
             position: absolute;
-            top: 120px; 
+            top: 120px;
             right: 50px;
-            width: 1120px; 
-            height: 630px; 
+            width: 1120px;
+            height: 630px;
         }
 
         @media (max-width: 768px) {
             .video-container {
                 position: relative;
                 top: auto;
-                width: 100%; 
-                height: auto; 
+                width: 100%;
+                height: auto;
             }
-    }
-
-
+        }
     </style>
 </head>
 <body>
@@ -262,7 +269,7 @@
     </div>
     <div class="content-container" id="container1">
         <div class="main-content">
-            <h1>ÕÒigo MartÌnez</h1>
+            <h1>√ç√±igo Mart√≠nez</h1>
             <p>Video game designer and producer at MadSlime Studio.</p>
             <p>Currently working at an undisclosed title set to be released at some point in 2024.</p>
             <button class="button" id="see-my-work-button">See my work</button>
