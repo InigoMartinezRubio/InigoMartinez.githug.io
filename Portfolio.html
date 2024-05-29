@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        body {
+            --opacity: 0;
+            background-image: url('Noctis.jpg'), url('Hanako.jpg'), url('titanic.jpg');
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-position: center center, center center, center center;
+            background-attachment: fixed, fixed, fixed;
+            background-size: cover, cover, cover;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-image 0.5s;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            background: url('Hanako.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: var(--opacity);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        .navbar-item {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .navbar-item:hover .submenu {
+            display: block;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            min-width: 110px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 10px 16px;
+            left: 0;
+            right: 0;
+            top: 100%;
+        }
+
+        .submenu button {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 1px 0;
+        }
+
+        .content-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .main-content {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            padding: 50px;
+            box-sizing: border-box;
+            opacity: 1;
+            transition: opacity 0.5s, top 0.5s;
+        }
+
+        .button {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 20px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 19px;
+            font-weight: bold;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .button-transparent {
+            font-family: 'Roboto', sans-serif;
+            background-color: transparent;
+            color: #A0A0A0;
+            border: 1px solid #fff;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .button-transparent:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 100px 0px 0 0;
+        }
+
+        h1 {
+            font-size: 10em;
+        }
+
+        p {
+            font-size: 1.3em;
+            color: #A0A0A0;
+        }
+        #container3::before {
+            content: "";
+            position: fixed;
+            background: url('titanic.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: var(--opacity);
+        }
+        #container4::before {
+            content: "";
+            position: fixed;
+            background: url('spacex.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: var(--opacity);
+        }
+        .main-content {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .text-content {
+            width: 100%;
+        }
+        #container1::before {
+            content: "";
+            position: absolute;
+            background-image: url('arrowUI.png'); /* Ruta de tu imagen */
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            width: 100px; /* Ancho de tu imagen */
+            height: 100px; /* Alto de tu imagen */
+            animation: moveUpDown 1s infinite alternate; /* Animación que se mueve de arriba a abajo */
+            bottom: 300px; /* Distancia desde abajo */
+            left: calc(50% - 50px); /* Centrar horizontalmente */
+        }
+
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+        .video-container {
+            position: absolute;
+            top: 120px; 
+            right: 50px;
+            width: 1120px; 
+            height: 630px; 
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                position: relative;
+                top: auto;
+                width: 100%; 
+                height: auto; 
+            }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logomad.png" alt="Logo">
+        <div>
+            <span class="navbar-item">
+                About me
+                <div class="submenu">
+                    <button class="button-transparent">What do I do?</button>
+                    <button class="button-transparent">Who Am I?</button>
+                    <button class="button-transparent">Languages</button>
+                    <button class="button-transparent">Ejemplo 4</button>
+                </div>
+            </span>
+            <span class="navbar-item">
+                CV
+                <div class="submenu">
+                    <button class="button-transparent">Ejemplo 1</button>
+                    <button class="button-transparent">Ejemplo 2</button>
+                    <button class="button-transparent">Ejemplo 3</button>
+                    <button class="button-transparent">Ejemplo 4</button>
+                </div>
+            </span>
+            <span class="navbar-item">
+                Github
+                <div class="submenu">
+                    <button class="button-transparent">Ejemplo 1</button>
+                    <button class="button-transparent">Ejemplo 2</button>
+                    <button class="button-transparent">Ejemplo 3</button>
+                    <button class="button-transparent">Ejemplo 4</button>
+                </div>
+            </span>
+            <span class="navbar-item">
+                Contact me
+                <div class="submenu">
+                    <button class="button-transparent">Ejemplo 1</button>
+                    <button class="button-transparent">Ejemplo 2</button>
+                    <button class="button-transparent">Ejemplo 3</button>
+                    <button class="button-transparent">Ejemplo 4</button>
+                </div>
+            </span>
+        </div>
+        <div>+34 684019151</div>
+    </div>
+    <div class="content-container" id="container1">
+        <div class="main-content">
+            <h1>Íñigo Martínez</h1>
+            <p>Video game designer and producer at MadSlime Studio.</p>
+            <p>Currently working at an undisclosed title set to be released at some point in 2024.</p>
+            <button class="button" id="see-my-work-button">See my work</button>
+            <div class="button-container">
+                <button class="button-transparent">Portfolio</button>
+                <button class="button-transparent">Soft skills</button>
+                <button class="button-transparent">Contact</button>
+            </div>
+        </div>
+    </div>
+    <div class="content-container" id="container2">
+        <div class="main-content">
+            <h1>Hanako</h1>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p>Hanako is a video-cinematic made in Unreal Engine 4.</p>
+                    <p>It tells a thrilling story about a person stuck in a time loop.</p>
+                    <button class="button" id="watch-it-button">Watch it</button>
+                </div>
+                <div class="video-container" id="video-container" style="display: none;">
+                    <iframe id="youtube-video" width="1120" height="630" src="https://www.youtube.com/embed/cXm7FUe9I98?si=Rc7XsJqYp3_oNMSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+  document.getElementById('watchButton').addEventListener('click', function() {
+    document.getElementById('videoContainer').style.display = 'block';
+    document.getElementById('container2').style.opacity = 1;
+    document.getElementById('videoPlayer').play();
+  });
+</script>
+
+    <div class="content-container" id="container3">
+        <div class="main-content">
+            <h1>R.M.S. Titanic</h1>
+            <p>This is a hight detailed model I made for my final project, it.</p>
+            <p>was made using Autodesk Maya and Unreal Engine 5.</p>
+            <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
+                <button class="button">Check out the project</button>
+            </a>
+        </div>
+    </div>
+    <div class="content-container" id="container4">
+        <div class="main-content">
+            <h1>SpaceX Starship</h1>
+            <p>The Space X Starship program is a fully reusable rocket designed to take humanity </p>
+            <p>to Mars and beyond. This model was made in Blender and textured in</p>
+            <p>Adobe Substance Painter.</p>
+            <a href="https://www.artstation.com/cagemein/albums/2883945" target="_blank">
+                <button class="button">Check out the project</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('see-my-work-button').addEventListener('click', function() {
+        document.getElementById('container4').scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
+
+    <script>
+    document.getElementById('watch-it-button').addEventListener('click', function() {
+        document.getElementById('video-container').style.display = 'block';
+        document.getElementById('container2').style.opacity = 1;
+        document.getElementById('video-container').style.zIndex = 3;
+        document.getElementById('container2').style.zIndex = 2;
+        document.getElementById('container3').style.zIndex = 1;
+        document.getElementById('youtube-video').src += "&autoplay=1";
+    });
+    </script>
+    <script>
+        document.getElementById('see-my-work-button').addEventListener('click', function() {
+            document.getElementById('container2').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+<script>
+    window.onscroll = function () {
+        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+        document.body.style.setProperty('--opacity', Math.min(1, scrollPercentage * 2));
+        if (scrollPercentage > 0 && scrollPercentage <= 0.2) { 
+            document.getElementById('container1').style.opacity = 1 - scrollPercentage / 0.2;
+            document.getElementById('container2').style.opacity = scrollPercentage / 0.2;
+            document.getElementById('container3').style.opacity = 0;
+            document.getElementById('container4').style.opacity = 0;
+            document.getElementById('container1').style.zIndex = 3;
+            document.getElementById('container2').style.zIndex = 2;
+            document.getElementById('container3').style.zIndex = 1;
+            document.getElementById('container4').style.zIndex = 1;
+        } else if (scrollPercentage > 0.2 && scrollPercentage <= 0.6) { 
+            document.getElementById('container1').style.opacity = 0;
+            document.getElementById('container2').style.opacity = 1 - (scrollPercentage - 0.3) / 0.3; 
+            document.getElementById('container3').style.opacity = (scrollPercentage - 0.3) / 0.3; 
+            document.getElementById('container4').style.opacity = 0;
+            document.getElementById('container1').style.zIndex = 0;
+            document.getElementById('container2').style.zIndex = 3;
+            document.getElementById('container3').style.zIndex = 2;
+            document.getElementById('container4').style.zIndex = 0;
+        } else if (scrollPercentage > 0.6) {
+            document.getElementById('container1').style.opacity = 0;
+            document.getElementById('container2').style.opacity = 0;
+            document.getElementById('container3').style.opacity = 1 - (scrollPercentage - 0.6) / 0.4;
+            document.getElementById('container4').style.opacity = (scrollPercentage - 0.6) / 0.4;
+            document.getElementById('container1').style.zIndex = 1;
+            document.getElementById('container2').style.zIndex = 3;
+            document.getElementById('container3').style.zIndex = 3;
+            document.getElementById('container4').style.zIndex = 2;
+        } else {
+            document.getElementById('container1').style.opacity = 1;
+            document.getElementById('container2').style.opacity = 0;
+            document.getElementById('container3').style.opacity = 0;
+            document.getElementById('container4').style.opacity = 0;
+            document.getElementById('container1').style.zIndex = 3;
+            document.getElementById('container2').style.zIndex = 2;
+            document.getElementById('container3').style.zIndex = 2;
+            document.getElementById('container4').style.zIndex = 1;
+        }
+    }
+</script>
+</body>
+</html>
