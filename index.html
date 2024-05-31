@@ -219,6 +219,7 @@
         p {
             font-size: 1.3em;
             color: #A0A0A0;
+            justify-content: center;
         }
         #contact-form {
             display: flex;
@@ -347,9 +348,7 @@
         <img src="logomad.png" alt="Logo">
         <div class="navbar-center">
             <span class="navbar-item">
-                <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
-                    <button class="button-transparent">About Me</button>
-                </a>
+                <button class="button-transparent" id="about-me-button">About Me</button>
             </span>
             <span class="navbar-item">
                 <button class="button-transparent" id="cv-button">CV</button>
@@ -367,6 +366,19 @@
         </div>
         <div class="navbar-item2">
             +34 684019151
+        </div>
+    </div>
+    <div id="about-me-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>About Me</h2>
+            <p>My name is Íñigo Martínez. I am a creative individual with a passion for continuous learning. I am always seeking new opportunities to enhance my skills and acquire new knowledge. My innate curiosity and drive for self-improvement push me to explore various areas and tackle new challenges with enthusiasm.</p><p>
+
+                As a hobby, I love building scale models. This pastime not only allows me to express my creativity but also helps me develop precision and attention to detail, which are essential skills in many professional aspects. Additionally, I am an avid gamer. Through video games, I not only enjoy entertainment but also find inspiration for my work and gain a deeper understanding of what makes a game truly captivating.
+                
+            </p><p>Regarding my skills useful for video game development, I have experience with tools and game engines such as Unreal Engine and Unity. I am proficient in programming languages like C++ and C#, and I have a good grasp of design and 3D modeling techniques. My ability to work in a team and communicate effectively enables me to collaborate with other developers and artists to create immersive and exciting gaming experiences.
+                
+                I am always eager to learn new techniques and adapt to emerging trends in the video game development industry. My passion for creativity and continuous learning makes me a valuable member of any game development team.</p>
         </div>
     </div>
     <div id="cv-modal" class="modal">
@@ -518,15 +530,26 @@
     // Función para abrir el modal del CV
     function openCVModal() {
         document.getElementById('cv-modal').style.display = "flex";
+        document.body.classList.add('modal-open');
+    }
+
+    // Función para abrir el modal de About Me
+    function openAboutMeModal() {
+        document.getElementById('about-me-modal').style.display = "flex";
+        document.body.classList.add('modal-open');
+    }
+
+    // Función para abrir el modal de Contacto
+    function openContactModal() {
+        document.getElementById('contact-modal').style.display = "flex";
+        document.body.classList.add('modal-open');
     }
 
     // Asociar la función al evento click del botón CV
     document.getElementById('cv-button').addEventListener('click', openCVModal);
 
-    // Función para abrir el modal de Contacto
-    function openContactModal() {
-        document.getElementById('contact-modal').style.display = "flex";
-    }
+    // Asociar la función al evento click del botón About Me
+    document.getElementById('about-me-button').addEventListener('click', openAboutMeModal);
 
     // Asociar la función al evento click del botón Contact
     document.getElementById('contact-button').addEventListener('click', openContactModal);
@@ -535,36 +558,32 @@
     document.querySelectorAll('.close').forEach(function(closeBtn) {
         closeBtn.addEventListener('click', function() {
             this.closest('.modal').style.display = "none";
+            document.body.classList.remove('modal-open');
         });
     });
 
-    // Enviar formulario usando Web3Forms
+    // Enviar formulario de contacto
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
+        // Aquí puedes añadir la lógica para enviar el formulario
+        const form = event.target;
 
-        // Obtén los datos del formulario
-        const formData = new FormData(this);
-
-        // Envía los datos a Web3Forms
-        fetch(this.action, {
-            method: this.method,
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                alert('Form submitted successfully!');
-                document.getElementById('contact-form').reset();
-                document.getElementById('contact-modal').style.display = "none";
-            } else {
-                alert('Failed to submit the form. Please try again.');
-            }
-        }).catch(error => {
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(form)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Form submitted successfully!');
+            document.getElementById('contact-modal').style.display = "none";
+            document.body.classList.remove('modal-open');
+        })
+        .catch(error => {
             console.error('Error:', error);
-            alert('An error occurred. Please try again.');
+            alert('There was an error submitting the form.');
         });
     });
 </script>
+
 </body>
 </html>
