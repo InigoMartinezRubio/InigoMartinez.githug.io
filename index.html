@@ -220,6 +220,45 @@
             font-size: 1.3em;
             color: #A0A0A0;
         }
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact-form label,
+        #contact-form input,
+        #contact-form textarea,
+        #contact-form button {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #contact-form button {
+            font-family: 'Roboto', sans-serif;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #fff;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 100px 5px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        #contact-form button:hover {
+            background-color: #ff0000;
+            color: rgb(255, 255, 255);
+        }
 
         #container3::before {
             content: "";
@@ -321,9 +360,9 @@
                 </a>
             </span>
             <span class="navbar-item">
-                <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
-                    <button class="button-transparent">Contact</button>
-                </a>
+                <span class="navbar-item">
+                    <button class="button-transparent" id="contact-button">Contact</button>
+                </span>
             </span>
         </div>
         <div class="navbar-item2">
@@ -351,7 +390,7 @@
         <div class="main-content">
             <h1>Íñigo Martínez</h1>
             <p>Video game designer and producer at MadSlime Studio.</p>
-            <p>Currently working at an undisclosed title set to be released at some point in 2024.</p>
+            <p>Currently working at an undisclosed title set to be released at some point in 2026.</p>
             <button class="button" id="see-my-work-button">See my work</button>
             <div class="button-container">
                 <button class="button-transparent">Portfolio</button>
@@ -366,7 +405,7 @@
             <div class="content-wrapper">
                 <div class="text-content">
                     <p>Hanako is a video-cinematic made in Unreal Engine 4.</p>
-                    <p>It tells a thrilling story about a person stuck in a time loop.</p>
+                    <p>It tells a thrilling story about a person stucked in a time loop.</p>
                     <button class="button" id="watch-it-button">Watch it</button>
                 </div>
                 <div class="video-container" id="video-container" style="display: none;">
@@ -378,7 +417,7 @@
     <div class="content-container" id="container3">
         <div class="main-content">
             <h1>R.M.S. Titanic</h1>
-            <p>This is a hight detailed model I made for my final project, it</p>
+            <p>This is a highly detailed model I made for my final project, it</p>
             <p>was made using Autodesk Maya and Unreal Engine 5.</p>
             <a href="https://www.artstation.com/artwork/lDzr8Y" target="_blank">
                 <button class="button">Check out the project</button>
@@ -396,33 +435,26 @@
             </a>
         </div>
     </div>
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Form</h2>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="da72cf3c-7182-45a6-9f41-304317d1d792">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-<script>
-    // Remove this block of code
-    // Get modal element
-    var modal = document.getElementById("cv-modal");
-    // Get button that opens the modal
-    var btn = document.getElementById("cv-button");
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-    // When the user clicks the button, open the modal 
-    btn.onclick = function() {
-        modal.style.display = "flex";
-    }
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
 <script>
     document.getElementById('watch-it-button').addEventListener('click', function() {
         document.getElementById('video-container').style.display = 'block';
@@ -481,6 +513,58 @@
             document.getElementById('container4').style.zIndex = 1;
         }
     }
+</script>
+<script>
+    // Función para abrir el modal del CV
+    function openCVModal() {
+        document.getElementById('cv-modal').style.display = "flex";
+    }
+
+    // Asociar la función al evento click del botón CV
+    document.getElementById('cv-button').addEventListener('click', openCVModal);
+
+    // Función para abrir el modal de Contacto
+    function openContactModal() {
+        document.getElementById('contact-modal').style.display = "flex";
+    }
+
+    // Asociar la función al evento click del botón Contact
+    document.getElementById('contact-button').addEventListener('click', openContactModal);
+
+    // Cerrar los modales cuando se hace clic en el botón de cierre
+    document.querySelectorAll('.close').forEach(function(closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            this.closest('.modal').style.display = "none";
+        });
+    });
+
+    // Enviar formulario usando Web3Forms
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Obtén los datos del formulario
+        const formData = new FormData(this);
+
+        // Envía los datos a Web3Forms
+        fetch(this.action, {
+            method: this.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert('Form submitted successfully!');
+                document.getElementById('contact-form').reset();
+                document.getElementById('contact-modal').style.display = "none";
+            } else {
+                alert('Failed to submit the form. Please try again.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        });
+    });
 </script>
 </body>
 </html>
